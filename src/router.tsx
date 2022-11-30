@@ -9,14 +9,16 @@ const router = createBrowserRouter([
         path: "/",
         element: <App/>,
         errorElement: <NotFound />,
-    },
-    {
-        path: "/photo",
-        element: <Photo />,
-    },
-    {
-        path: "/cart",
-        element: <Cart />,
+        children: [
+            {
+                path: "/photo",
+                element: <Photo />,
+            },
+            {
+                path: "/cart",
+                element: <Cart />,
+            }
+        ]
     }
 ]);
 
