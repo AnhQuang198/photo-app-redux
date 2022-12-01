@@ -3,6 +3,7 @@ import App from "./App";
 import NotFound from "./components/NotFound/NotFound";
 import Cart from "./features/Cart/Cart";
 import Photo from "./features/Photo/Photo";
+import Task from "./features/Task/Task";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart />,
+            },
+            {
+                path: "/task",
+                element: <Task />
             }
         ]
     }

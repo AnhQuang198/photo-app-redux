@@ -1,34 +1,48 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import {NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Container } from 'reactstrap';
 import './index.scss';
 
 function Header() {
+    const logo = require(`../../assets/images/logo.svg`).default
+    const github = require(`../../assets/images/github.svg`).default
+    const twitter = require(`../../assets/images/twitter.svg`).default
+    const discord = require(`../../assets/images/discord.svg`).default
+
     return (
-        <header className="header">
+        <header className='common-under-line'>
             <Container>
-                <Row className="justify-content-between">
-                    <Col>
-                        <h3>Demo</h3>
-                    </Col>
-                    <Col>
-                        <NavLink to="/photo">
-                            Photo
-                        </NavLink>
-                    </Col>
-                    <Col>
-                        <NavLink to="/cart">
-                            Cart
-                        </NavLink>
-                    </Col>
-                    <Col>
-                        <NavLink
-                            to="/"
-                        >
-                            Back home
-                        </NavLink>
-                    </Col>
-                </Row>
+                <div className="header">
+                    <div className="header-logo">
+                        <img src={logo} alt="logo"/>
+                    </div>
+                    <div className='header-button'>
+                        <div className="header-button-link">
+                            <Link to="/photo">Docs</Link>
+                        </div>
+                        <div className="header-button-link">
+                            <Link to="/cart">Blog</Link>
+                        </div>
+                        <div className="header-button-link">
+                            <Link to="/task">Users</Link>
+                        </div>
+                        <div className="header-button-link">
+                            <Link to="/">Enterprise</Link>
+                        </div>
+                        <div className="header-button-link">
+                            <Link to="/">Feedback</Link>
+                        </div>
+                        <div className="header-button-link">
+                            <img src={github} alt="github-logo"/>
+                        </div>
+                        <div className="header-button-link">
+                            <img src={twitter} alt="twitter-logo"/>
+                        </div>
+                        <div className="header-button-link">
+                            <img src={discord} alt="discord-logo"/>
+                        </div>
+                    </div>
+                </div>
             </Container>
         </header>
     );

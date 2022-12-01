@@ -1,10 +1,13 @@
 import React from 'react';
+import { Container } from 'reactstrap';
 
 function Cart() {
     return (
-        <div>
-            Cart
-        </div>
+        <Container>
+            <div>
+                Cart
+            </div>
+        </Container>
     );
 }
 

@@ -1,0 +1,41 @@
+.common-under-line {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-button {
+        width: 45%;
+        height: 4rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            line-height: 1.25rem;
+            padding: 10px 12px;
+
+            a {
+                color: #11182e;
+                text-decoration: none;
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                border-radius: 6px;
+                background-color: #f9fafb;
+            }
+        }
+    }
+}

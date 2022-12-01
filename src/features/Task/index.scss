@@ -1,0 +1,27 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0px;
+        text-transform: uppercase;
+    }
+
+    ul {
+        border-radius: 10px;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+    }
+
+    &-task-element {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+    }
+}

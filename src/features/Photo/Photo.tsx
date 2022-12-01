@@ -1,10 +1,14 @@
 import React from 'react';
+import { Container } from 'reactstrap';
+import './index.scss'
 
 function Photo() {
     return (
-        <div>
-            Photo
-        </div>
+        <Container>
+            <div className='photo-content'>
+                Photo
+            </div>
+        </Container>
     );
 }
 
