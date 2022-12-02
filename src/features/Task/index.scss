@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 40px 0px;
 
     p {
         width: 100%;
         text-align: center;
-        margin: 20px 0px;
+        margin: 10px 0px;
         text-transform: uppercase;
     }
 
@@ -23,5 +24,65 @@
         justify-content: space-between;
         align-items: center;
         height: 50px;
+        background-color: bisque;
+        padding: 0px 10px 0px 20px;
+        border-radius: 10px;
+        margin: 15px 0px;
+
+        &-action {
+            display: flex;
+
+            &-button {
+                width: 65px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0px 5px;
+                border: 1px solid #ffffff;
+                border-radius: 6px;
+                transition: 0.5s;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #65e5b0;
+                }
+            }
+        }
+    }
+}
+
+.form-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0px;
+
+    p {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0px;
+        text-transform: uppercase;
+    }
+
+    &-input-task {
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        border-radius: 10px;
+        margin: 15px 0px;
+        padding: 0px 20px;
+    }
+
+    &-btn-add {
+        width: 100%;
+        height: 50px;
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: #65e5b0;
+        }
     }
 }
