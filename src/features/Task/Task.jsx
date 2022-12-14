@@ -4,7 +4,7 @@ import "./index.scss";
 import { Formik } from 'formik';
 import { TaskSchema } from "./TaskValidate";
 import { useSelector, useDispatch } from "react-redux";
-import {addTask} from '../Task/taskSlice';
+import {addTask, deleteTask} from '../Task/taskSlice';
 
 
 function Task() {
@@ -17,16 +17,16 @@ function Task() {
         <div className="list col-6">
           <p>Todolist</p>
           <ul>
-            {todoTasks.length > 0 ? todoTasks.map((item, index) => {
+            {todoTasks.length > 0 ? todoTasks.map((item) => {
               return (
-                <li key={index}>
+                <li key={item.id}>
                   <div className="list-task-element">
                     <span>{item.title}</span>
                     <div className="list-task-element-action">
                       <div className="list-task-element-action-button">
                         Done
                       </div>
-                      <div className="list-task-element-action-button">
+                      <div className="list-task-element-action-button" onClick={() => dispatch(deleteTask(item))}>
                         Delete
                       </div>
                     </div>
