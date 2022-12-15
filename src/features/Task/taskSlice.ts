@@ -1,16 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+interface newTodo {
+    id: number,
+    title: string,
+    completed: boolean
+}
+
+interface state {
+    dataResponse: newTodo[],
+    id: number
+}
+
+const initialState: state = {
+    dataResponse: [],
+    id: 0
+}
+
 
 const taskSlice = createSlice({
     name: "todos",
-    initialState: {
-        dataResponse: [],
-        id: 0
-    },
+    initialState: initialState,
     reducers: {
         addTask: (state, action) => {
             state.id += 1;
-            const newTodo = {
+            const newTodo: newTodo = {
                 id: state.id,
                 title: action.payload.title,
                 completed: false

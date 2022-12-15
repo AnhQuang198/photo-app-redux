@@ -4,10 +4,10 @@ import "./index.scss";
 import { Formik } from "formik";
 import { TaskSchema } from "./TaskValidate";
 import { useSelector, useDispatch } from "react-redux";
-import { addTask, deleteTask } from "../Task/taskSlice";
+import { addTask, deleteTask } from "./taskSlice";
 
 function Task() {
-  const todoTasks = useSelector((state) => state.task.dataResponse);
+  const todoTasks = useSelector((state: any) => state.task.dataResponse);
   const dispatch = useDispatch();
 
   return (
@@ -17,7 +17,7 @@ function Task() {
           <p>Todolist</p>
           <ul>
             {todoTasks.length > 0 ? (
-              todoTasks.map((item) => {
+              todoTasks.map((item: any) => {
                 return (
                   <li key={item.id}>
                     <div className="list-task-element">
