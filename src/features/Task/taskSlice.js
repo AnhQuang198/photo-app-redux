@@ -18,13 +18,14 @@ const taskSlice = createSlice({
             state.dataResponse.push(newTodo);
         },
         deleteTask: (state, action) => {
-            let datas = state.dataResponse;
-            console.log(datas);
+            const datas = [...state.dataResponse];
             datas.map(item => {
                 if (item.id === action.payload.id) {
-                    state.dataResponse.splice(item, 1);
+                    let index = item.id - 1;
+                    datas.splice(index, 1);
                 }
-            })
+            });
+            state.dataResponse = datas;
         }
     }
 });

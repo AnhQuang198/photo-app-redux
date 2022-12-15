@@ -1,15 +1,14 @@
 import React from "react";
 import { Container, Row } from "reactstrap";
 import "./index.scss";
-import { Formik } from 'formik';
+import { Formik } from "formik";
 import { TaskSchema } from "./TaskValidate";
 import { useSelector, useDispatch } from "react-redux";
-import {addTask, deleteTask} from '../Task/taskSlice';
-
+import { addTask, deleteTask } from "../Task/taskSlice";
 
 function Task() {
-    const todoTasks = useSelector((state) => state.task.dataResponse);
-    const dispatch = useDispatch();
+  const todoTasks = useSelector((state) => state.task.dataResponse);
+  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -17,23 +16,30 @@ function Task() {
         <div className="list col-6">
           <p>Todolist</p>
           <ul>
-            {todoTasks.length > 0 ? todoTasks.map((item) => {
-              return (
-                <li key={item.id}>
-                  <div className="list-task-element">
-                    <span>{item.title}</span>
-                    <div className="list-task-element-action">
-                      <div className="list-task-element-action-button">
-                        Done
-                      </div>
-                      <div className="list-task-element-action-button" onClick={() => dispatch(deleteTask(item))}>
-                        Delete
+            {todoTasks.length > 0 ? (
+              todoTasks.map((item) => {
+                return (
+                  <li key={item.id}>
+                    <div className="list-task-element">
+                      <span>{item.title}</span>
+                      <div className="list-task-element-action">
+                        <div className="list-task-element-action-button">
+                          Done
+                        </div>
+                        <div
+                          className="list-task-element-action-button"
+                          onClick={() => dispatch(deleteTask(item))}
+                        >
+                          Delete
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-              );
-            }) : <p>Nothing...!</p>}
+                  </li>
+                );
+              })
+            ) : (
+              <p>Nothing...!</p>
+            )}
           </ul>
         </div>
         <div className="form-add col-6">
@@ -43,7 +49,6 @@ function Task() {
             validationSchema={TaskSchema}
             onSubmit={(values) => {
               //submit form
-              console.log(values);
               dispatch(addTask(values));
             }}
           >
@@ -66,7 +71,9 @@ function Task() {
                   placeholder="Enter task here..."
                   className="form-add-input-task"
                 />
-                {errors.title && touched.title && <p className="form-add-error-msg">{errors.title}</p>}
+                {errors.title && touched.title && (
+                  <p className="form-add-error-msg">{errors.title}</p>
+                )}
                 <button type="submit" className="form-add-btn-add">
                   Add
                 </button>
